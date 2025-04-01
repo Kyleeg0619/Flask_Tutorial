@@ -52,6 +52,24 @@ def create_boat():
         error = e.orig.args[1]
         print(error)
         return render_template('boats_create.html', error=error, success=None)
+    
+@app.route('/delete', methods=['GET'])
+def delete_get_request():
+    return render_template('boats_delete.html')
+
+
+@app.route('/delete', methods=['POST'])
+def delete_boat():
+    try:
+        conn.execute(
+            text("DELETE FROM boats WHERE id = :id"),
+            request.form
+        )
+        return render_template('boats_delete.html', error=None, success="Data deleted successfully!")
+    except Exception as e:
+        error = e.orig.args[1]
+        print(error)
+        return render_template('boats_delete.html', error=error, success=None)
 
 
 if __name__ == '__main__':
