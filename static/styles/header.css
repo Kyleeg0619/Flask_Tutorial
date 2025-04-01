@@ -1,9 +1,17 @@
+:root {
+  --light-pink--: #f7efda;
+  --lime--: #badd7f;
+  --melon--: #efaca5;
+  --dk-green--: #3e8440;
+}
+
 .barItem{
   display: inline-block;
 }
 
 .logo {
-  width: 45px;
+  width: 70px;
+  margin: 5px;
 }
 
 header li {
@@ -14,7 +22,7 @@ header li {
 }
 
 .topBar{
-  background-color: #faf9f7;
+  background-color: var(--light-pink--);
   display:flex;
   justify-content: space-between;
   align-items:center;
@@ -31,6 +39,10 @@ header li {
   border: none;
   border-radius: 5px;
   margin-left: 10px;
+}
+
+button.barItem, #login {
+  background-color: var(--lime--);
 }
 
 .mainDiv {
@@ -64,7 +76,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   font-size: 14px;
-  background-color: #f4f4f4;
+  background-color: white;
   align-items: start;
   min-height: 100vh;
 }
@@ -74,7 +86,7 @@ body {
   flex-flow: row wrap;
   padding: 30px 30px 20px 30px;
   color: #2f2f2f;
-  background-color: #fff;
+  background-color: var(--light-pink--);
   border-top: 1px solid #e5e5e5;
 }
 
@@ -89,9 +101,7 @@ body {
 
 .footer__logo {
   font-family: 'Pacifico', cursive;
-  font-weight: 400;
-  font-size: 1.5rem;
-  text-align: left;
+  width: 70px;
 }
 
 .footer__addr h2 {
@@ -116,7 +126,7 @@ body {
   justify-content: center;
   height: 36px;
   max-width: max-content;
-  background-color: rgb(33, 33, 33, 0.07);
+  background-color: var(--lime--);
   border-radius: 100px;
   color: #2f2f2f;
   line-height: 0;
