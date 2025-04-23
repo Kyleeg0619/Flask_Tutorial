@@ -1,0 +1,49 @@
+<style>
+    .column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .boat {
+        width: max-content;
+        background: #efaca5;
+        color: white;
+        margin: 50px;
+        padding: 50px;
+        border-radius: 20px;
+        font-size: 40px;
+    }
+
+    .boat ul {
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #3e8440;
+    }
+
+</style>
+
+{% extends "base.html" %}
+
+{% block body %}
+<div class="column">
+    <h3>Boat Details</h3>
+
+    <div class="boat">
+        <ul>
+            <li>Boat ID: {{ boat.id }}</li>
+            <li>Name: {{ boat.name }}</li>
+            <li>Type: {{ boat.type }}</li>
+            <li>Owner ID: {{ boat.owner_id }}</li>
+            <li>Price: ${{ boat.rental_price }}</li>
+        </ul>
+    </div>
+
+    <a href="{{ url_for('get_boats', page=1) }}" class="pagination_button">Back to Boats List --></a>
+</div>
+{% endblock %}

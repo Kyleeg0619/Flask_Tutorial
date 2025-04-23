@@ -8,8 +8,11 @@
     }
 
     .boat {
-        min-width: 200px;
+        width: 200px;
+        margin: 5px auto;
         padding: 10px;
+        border: #efaca5 1px solid;
+        border-radius: 30px;
     }
 
     .pagination_bar {
@@ -33,7 +36,7 @@
     .column {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         height: 100%;
         padding-top: 20px;
         align-items: center;
@@ -48,7 +51,7 @@
 
         <div class="flex-box">
             {% for boat in boats %}
-                <div class="boat">
+            <div class="boat" onclick="viewBoat({{ boat['id'] }})">
                     <ul>
                         <li>Boat id: {{ boat['id'] }}</li>
                         <ul>
@@ -75,6 +78,10 @@
 
         </div>
     </div>
-
-
+    
+    <script>
+        function viewBoat(boatId) {
+            window.location.href = "/boat/" + boatId;  // Redirect to boat details page
+        }
+    </script>
 {% endblock %}
